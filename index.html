@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"><i class="fa-solid fa-cloud-sun"></i> Weather Dashboard</h1>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name..." autofocus>
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button id="locationBtn"><i class="fa-solid fa-location-dot"></i></button>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="weatherDisplay" class="weather-display hidden">
+            <div class="weather-main">
+                <div class="weather-left">
+                    <h2 id="cityName" class="city-name"></h2>
+                    <p id="dateTime" class="date-time"></p>
+                    <div class="temp-row">
+                        <span id="temperature" class="temperature"></span>
+                        <div class="weather-info">
+                            <img id="weatherIcon" class="weather-icon" alt="">
+                            <p id="weatherDesc" class="weather-desc"></p>
+                        </div>
+                    </div>
+                    <p id="feelsLike" class="feels-like"></p>
+                </div>
+                <div class="weather-right">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div>
+                            <p class="stat-label">Humidity</p>
+                            <p id="humidity" class="stat-value">--</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <div>
+                            <p class="stat-label">Wind Speed</p>
+                            <p id="windSpeed" class="stat-value">--</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <p class="stat-label">Visibility</p>
+                            <p id="visibility" class="stat-value">--</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <p class="stat-label">Pressure</p>
+                            <p id="pressure" class="stat-value">--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3><i class="fa-solid fa-calendar-days"></i> 7-Day Forecast</h3>
+                <div id="forecast" class="forecast-grid"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
